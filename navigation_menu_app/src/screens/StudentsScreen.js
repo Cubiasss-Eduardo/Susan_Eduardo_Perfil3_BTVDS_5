@@ -1,21 +1,35 @@
 import React from 'react';
-import { View, TouchableOpacity, StyleSheet, Text, FlatList, Image } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import { Avatar, Button, Card, Text } from 'react-native-paper';
 
-const EstudiantesScreen= () => {
+const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 
+const EstudiantesScreen = () => {
     return (
         <View style={styles.container}>
-            <Text>Lista de estudiantes</Text>
+            <Card>
+                <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
+                <Card.Content>
+                    <Text variant="titleLarge">Card title</Text>
+                    <Text variant="bodyMedium">Card content</Text>
+                </Card.Content>
+                <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+                <Card.Actions>
+                    <Button>Cancel</Button>
+                    <Button>Ok</Button>
+                </Card.Actions>
+            </Card>
         </View>
     );
 };
 
 export default EstudiantesScreen;
 
+
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
-      }
+    }
 });
